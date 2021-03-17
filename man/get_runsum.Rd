@@ -27,7 +27,6 @@ The data frame downloaded from FPC.
 Get runsum report
 }
 \examples{
-
 \dontrun{
 get_runsum(dam="BON", sdate="1-1-2019", edate="12-31-2019", rpt="salmon")
 }
