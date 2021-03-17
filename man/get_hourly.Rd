@@ -7,19 +7,19 @@
 get_hourly(sdate, edate, ladder_id, species = "adultchinook")
 }
 \arguments{
-\item{sdate}{Start date}
+\item{sdate}{Start date \code{character} in m-d-yyyy format. e.g., \code{"8-1-2019"}}
 
-\item{edate}{End date}
+\item{edate}{End date \code{character} in m-d-yyyy format}
 
-\item{ladder_id}{Ladders BON 1:2, TDA 3:4, JDA 5:6, MCN 7:8, IHR 9:10, LMN 11:12, LGS 13, LGR 14}
+\item{ladder_id}{BON \code{1:2}, TDA \code{3:4}, JDA \code{5:6}, MCN \code{7:8}, IHR \code{9:10}, LMN \code{11:12}, LGS \code{13}, LGR \code{14}}
 
-\item{species}{Species to get counts for}
+\item{species}{Species for which to get counts. e.g., \code{"adultchinook"} or \code{"jackchinook"}}
 }
 \value{
 
 }
 \description{
-Get hourly ladder counts
+Downloads hourly counts of one species in one ladder at a mainstem Columbia or Snake River dam.
 }
 \examples{
 \dontrun{

@@ -1,9 +1,10 @@
 #' Get runsum report
 #'
-#' @param dam Dam at which counts are desired, only available for Corps dams in this query.Dams: BON, TDA, JDA, MCN, IHR, LMN, LGS, LGR
+#' Downloads daily total counts at a mainstem Columbia or Snake River dam for the specified date range.
+#' @param dam Dam at which counts are desired. Dams: `"BON"`, `"TDA"`, `"JDA"`, `"MCN"`, `"IHR"`, `"LMN"`, `"LGS"`, `"LGR"`
 #' @param sdate  Start date to pull counts. `character` in m-d-yyyy format.
 #' @param edate  End date to pull counts. `character` in m-d-yyyy format.
-#' @param rpt  Report to download, either "salmon" or "lamprey"
+#' @param rpt  Report to download, either `"salmon"` (anadromous salmonids) or `"lamprey"` (all other species).
 #'
 #' @return The data frame downloaded from FPC.
 #' @importFrom readr read_csv
@@ -27,11 +28,12 @@ get_runsum <- function(dam=c("BON","TDA","JDA","MCN","IHR","LMN","LGS","LGR"), s
 
 }
 
-#' Download laddersplit count report
+#' Get laddersplit count report
 #'
-#' @param sdate Start date
-#' @param edate End date
-#' @param rpt  Report to download, either "salmon" (anadromous salmonids) or "lamprey" (all other species)
+#' Downloads the daily ladder split report for mainstem Columbia and Snake River dams.
+#' @param sdate Start date for ladder counts
+#' @param edate End date for ladder counts
+#' @param rpt  Report to download, either `"salmon"` (anadromous salmonids) or `"lamprey"` (all other species)
 #' @importFrom dplyr filter
 #' @return
 #' @export
@@ -56,10 +58,11 @@ get_laddersplit <- function(sdate, edate, rpt=c("salmon", "lamprey")){
 
 #' Get hourly ladder counts
 #'
-#' @param sdate Start date
-#' @param edate End date
-#' @param ladder_id  Ladders BON 1:2, TDA 3:4, JDA 5:6, MCN 7:8, IHR 9:10, LMN 11:12, LGS 13, LGR 14
-#' @param species Species to get counts for
+#' Downloads hourly counts of one species in one ladder at a mainstem Columbia or Snake River dam.
+#' @param sdate Start date `character` in m-d-yyyy format. e.g., `"8-1-2019"`
+#' @param edate End date `character` in m-d-yyyy format
+#' @param ladder_id  BON `1:2`, TDA `3:4`, JDA `5:6`, MCN `7:8`, IHR `9:10`, LMN `11:12`, LGS `13`, LGR `14`
+#' @param species Species for which to get counts. e.g., `"adultchinook"` or `"jackchinook"`
 #' @import dplyr
 #' @importFrom lubridate ymd_h
 #' @importFrom readr parse_number

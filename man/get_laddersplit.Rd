@@ -2,22 +2,22 @@
 % Please edit documentation in R/runsum.r
 \name{get_laddersplit}
 \alias{get_laddersplit}
-\title{Download laddersplit count report}
+\title{Get laddersplit count report}
 \usage{
 get_laddersplit(sdate, edate, rpt = c("salmon", "lamprey"))
 }
 \arguments{
-\item{sdate}{Start date}
+\item{sdate}{Start date for ladder counts}
 
-\item{edate}{End date}
+\item{edate}{End date for ladder counts}
 
-\item{rpt}{Report to download, either "salmon" (anadromous salmonids) or "lamprey" (all other species)}
+\item{rpt}{Report to download, either \code{"salmon"} (anadromous salmonids) or \code{"lamprey"} (all other species)}
 }
 \value{
 
 }
 \description{
-Download laddersplit count report
+Downloads the daily ladder split report for mainstem Columbia and Snake River dams.
 }
 \examples{
 \dontrun{

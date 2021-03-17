@@ -12,19 +12,19 @@ get_runsum(
 )
 }
 \arguments{
-\item{dam}{Dam at which counts are desired, only available for Corps dams in this query.Dams: BON, TDA, JDA, MCN, IHR, LMN, LGS, LGR}
+\item{dam}{Dam at which counts are desired. Dams: \code{"BON"}, \code{"TDA"}, \code{"JDA"}, \code{"MCN"}, \code{"IHR"}, \code{"LMN"}, \code{"LGS"}, \code{"LGR"}}
 
 \item{sdate}{Start date to pull counts. \code{character} in m-d-yyyy format.}
 
 \item{edate}{End date to pull counts. \code{character} in m-d-yyyy format.}
 
-\item{rpt}{Report to download, either "salmon" or "lamprey"}
+\item{rpt}{Report to download, either \code{"salmon"} (anadromous salmonids) or \code{"lamprey"} (all other species).}
 }
 \value{
 The data frame downloaded from FPC.
 }
 \description{
-Get runsum report
+Downloads daily total counts at a mainstem Columbia or Snake River dam for the specified date range.
 }
 \examples{
 \dontrun{
