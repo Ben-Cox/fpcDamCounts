@@ -4,12 +4,7 @@
 \alias{get_hourly}
 \title{Get hourly ladder counts}
 \usage{
-get_hourly(
-  sdate = "8-1-2019",
-  edate = "10-1-2019",
-  ladder_id,
-  species = "adultchinook"
-)
+get_hourly(sdate, edate, ladder_id, species = "adultchinook")
 }
 \arguments{
 \item{sdate}{Start date}

@@ -72,8 +72,8 @@ get_laddersplit <- function(sdate, edate, rpt=c("salmon", "lamprey")){
 #' get_hourly(sdate="8-1-2019", edate="10-1-2019", ladder_id=1, species="adultchinook")
 #' get_hourly(sdate="8-1-2019", edate="10-1-2019", ladder_id=1, species="jackchinook")
 #' }
-get_hourly <- function(sdate="8-1-2019", edate="10-1-2019", ladder_id, species="adultchinook"){
-  #if(!(ladder_id %in% 1:14)){stop("Ladder id doesn't exist")}
+get_hourly <- function(sdate, edate, ladder_id, species="adultchinook"){
+  if(!(ladder_id %in% 1:14)){stop("Ladder id doesn't exist")}
   url <- "https://www.fpc.org/adults/R_adultcoequeries_hourlyladderspecies_getresults.php?"
   suppressWarnings(readr::read_csv(glue::glue("{url}ladderid={ladder_id}&sdate={sdate}&edate={edate}&species={species}"),
                   col_types=readr::cols(CountDate=readr::col_date(format="%b %d %Y")))) %>%
